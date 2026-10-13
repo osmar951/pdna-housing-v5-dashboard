@@ -164,7 +164,7 @@ else: st.info('No valid GPS coordinates in current submissions.')
 
 # Consolidate repeat-group construction details at property level only.
 # Parent submission financial totals are authoritative and are never re-summed from modules.
-summary = houses.drop(columns=['Latitude', 'Longitude', 'Property label']).copy()
+summary = houses.drop(columns=['Latitude', 'Longitude', 'Property label'],errors='ignore').copy()
 summary['Total area (sq ft)'] = pd.NA
 summary['Replacement value (EC$)'] = pd.NA
 summary['Structural damage (EC$)'] = pd.NA
